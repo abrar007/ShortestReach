@@ -59,18 +59,20 @@ public class Solution {
 		Queue<Vertex> queue= new LinkedList<Vertex>();
 		graph.get(starting_node-1).visited=true;
 		queue.add(graph.get(starting_node-1));
-		
+		int counter=0;
 		while(!queue.isEmpty()) {
-			
+				
 	            // Dequeue a vertex from queue and print it 
 	            Vertex s = queue.poll(); 
 	            // Get all adjacent vertices of the dequeued vertex s 
 	            // If a adjacent has not been visited, then mark it 
 	            // visited and enqueue it 
-	           for(int i=0;i<s.neighbourList.size();i++) {
+	            System.out.print(s.getName()+" ");
+	            counter++;
+	            System.out.println(counter);
+	            for(int i=0;i<s.neighbourList.size();i++) {
 	        	   if(!s.neighbourList.get(i).visited) {
 	        		   s.neighbourList.get(i).visited=true;
-	        		   s.distance+=6;
 	        		   queue.add(s.neighbourList.get(i));
 	        	   }
 	           
